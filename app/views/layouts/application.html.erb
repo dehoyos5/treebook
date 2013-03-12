@@ -1,14 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Treebook</title>
+  <title>Tournament</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+
 </head>
+<div class="navbar">
+  <div class="navbar-inner">
+    <a class="brand" href="#">Air Hockey</a>
+    <ul class="nav">
+     <li> <%= link_to 'Statuses', statuses_path %>
+     	<li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+    </ul>
+  </div>
+</div>
 <body>
+<div class = "container">
+
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
 
 <%= yield %>
-
+</div>
 </body>
 </html>
